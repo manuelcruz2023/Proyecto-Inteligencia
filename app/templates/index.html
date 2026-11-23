@@ -12,7 +12,7 @@
   <header class="topbar">
     <div>
       <h1>Detección temprana de somnolencia</h1>
-      <p>Deep Learning (CNN + LSTM) · Análisis de video en tiempo real</p>
+      <p>Aprendizaje profundo (CNN + LSTM) · Análisis de video en tiempo real</p>
     </div>
     <span class="badge" id="model-badge">Modelo: …</span>
   </header>
@@ -46,7 +46,7 @@
           <div class="bar"><div id="warmup-bar" class="fill"></div></div>
           <small id="warmup-text"></small>
         </div>
-        <p class="timer">Tiempo continuo en Drowsy: <strong id="drowsy-timer">—</strong></p>
+        <p class="timer">Tiempo continuo en Somnolencia: <strong id="drowsy-timer">—</strong></p>
       </section>
 
       <section class="card">
@@ -57,9 +57,9 @@
 
       <section class="card">
         <h2>Configuración de alerta</h2>
-        <label>Segundos en Drowsy para alarma: <strong id="opt-seconds-val">3</strong> s
+        <label>Segundos en estado de somnolencia para activar la alarma: <strong id="opt-seconds-val">3</strong> s
           <input type="range" id="opt-seconds" min="1" max="15" step="1" value="3"></label>
-        <label>Umbral de probabilidad Drowsy: <strong id="opt-threshold-val">60</strong> %
+        <label>Umbral de probabilidad de somnolencia: <strong id="opt-threshold-val">60</strong> %
           <input type="range" id="opt-threshold" min="40" max="95" step="5" value="60"></label>
         <label>Volumen: <strong id="opt-volume-val">60</strong> %
           <input type="range" id="opt-volume" min="0" max="100" step="5" value="60"></label>

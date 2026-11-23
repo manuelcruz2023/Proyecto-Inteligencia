@@ -24,10 +24,3 @@ data/
 
 # Reportes generados
 reports/
-
-# Modelos entrenados
-*.h5
-*.keras
-*.pkl
-*.pt
-*.pth

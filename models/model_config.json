@@ -8,5 +8,5 @@
     "Drowsy"
   ],
   "backbone": "MobileNetV2",
-  "temporal": "LSTM(128)"
+  "temporal": "LSTM(64)"
 }

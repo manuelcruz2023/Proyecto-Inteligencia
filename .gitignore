@@ -24,3 +24,4 @@ data/
 
 # Reportes generados
 reports/
+.venv_wsl/

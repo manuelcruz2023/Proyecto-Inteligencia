@@ -1,0 +1,33 @@
+# Entornos virtuales
+venv/
+.venv/
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+
+# Variables de entorno
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dataset de entrenamiento
+data/
+
+# Reportes generados
+reports/
+
+# Modelos entrenados
+*.h5
+*.keras
+*.pkl
+*.pt
+*.pth

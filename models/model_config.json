@@ -1,0 +1,12 @@
+{
+  "img_size": 96,
+  "seq_len": 16,
+  "sample_fps": 2.0,
+  "class_names": [
+    "Alert",
+    "Low Vigilance",
+    "Drowsy"
+  ],
+  "backbone": "MobileNetV2",
+  "temporal": "LSTM(128)"
+}

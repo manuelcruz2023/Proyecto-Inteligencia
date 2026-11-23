@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detección de somnolencia · CNN + LSTM</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div id="alarm-flash" class="alarm-flash" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div>
+      <h1>Detección temprana de somnolencia</h1>
+      <p>Deep Learning (CNN + LSTM) · Análisis de video en tiempo real</p>
+    </div>
+    <span class="badge" id="model-badge">Modelo: …</span>
+  </header>
+
+  <div id="model-banner" class="model-banner hidden"></div>
+
+  <main class="layout">
+    <section class="card">
+      <div class="video-wrap" id="video-wrap">
+        <video id="video" class="mirror" playsinline muted></video>
+        <canvas id="overlay" class="mirror"></canvas>
+        <div id="video-msg" class="video-msg">Cámara apagada</div>
+        <div id="alarm-banner" class="alarm-banner hidden">⚠ SOMNOLENCIA DETECTADA</div>
+      </div>
+      <canvas id="capture" class="hidden"></canvas>
+
+      <div class="controls">
+        <button id="btn-start" class="btn primary" disabled>▶ Iniciar monitoreo</button>
+        <button id="btn-stop" class="btn" disabled>■ Detener</button>
+        <button id="btn-silence" class="btn warn" disabled>🔇 Silenciar alarma</button>
+      </div>
+      <p id="status-line" class="status-line">Pulse «Iniciar monitoreo» y permita el acceso a la cámara.</p>
+    </section>
+
+    <aside class="side">
+      <section class="card">
+        <h2>Estado actual</h2>
+        <div id="state-label" class="state" data-state="idle">En espera</div>
+        <p id="state-desc" class="muted">Sin análisis todavía.</p>
+        <div id="warmup" class="warmup hidden">
+          <div class="bar"><div id="warmup-bar" class="fill"></div></div>
+          <small id="warmup-text"></small>
+        </div>
+        <p class="timer">Tiempo continuo en Drowsy: <strong id="drowsy-timer">—</strong></p>
+      </section>
+
+      <section class="card">
+        <h2>Probabilidades</h2>
+        <div id="prob-list"></div>
+        <small class="muted">Latencia del servidor: <span id="latency">—</span></small>
+      </section>
+
+      <section class="card">
+        <h2>Configuración de alerta</h2>
+        <label>Segundos en Drowsy para alarma: <strong id="opt-seconds-val">3</strong> s
+          <input type="range" id="opt-seconds" min="1" max="15" step="1" value="3"></label>
+        <label>Umbral de probabilidad Drowsy: <strong id="opt-threshold-val">60</strong> %
+          <input type="range" id="opt-threshold" min="40" max="95" step="5" value="60"></label>
+        <label>Volumen: <strong id="opt-volume-val">60</strong> %
+          <input type="range" id="opt-volume" min="0" max="100" step="5" value="60"></label>
+      </section>
+
+      <section class="card">
+        <h2>Registro de eventos</h2>
+        <ul id="event-log" class="log"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    Proyecto académico · Inteligencia Computacional · Herramienta de apoyo, no sustituye el criterio ni el descanso del conductor.
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
